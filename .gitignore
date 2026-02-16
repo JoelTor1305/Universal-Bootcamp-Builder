@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Editor directories
+.vscode/
+.idea/
+*.sublime-*
+
+# Temp files
+*.tmp
+*.bak
+
+# Personal notes (not for public)
+PERSONAL_NOTES.md
+TODO_PRIVATE.md
+
+# Node modules (if added later)
+node_modules/
