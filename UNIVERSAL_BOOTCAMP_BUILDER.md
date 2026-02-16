@@ -482,18 +482,137 @@ This will take a minute...
    - Links to all daily pages
    ```
 
-3. **Create daily pages (all X days):**
+3. **Create daily pages (all X days) with EXACT structure:**
+
+   **CRITICAL: Use this EXACT Notion page structure for each day. This is not a suggestion.**
+
+   ```markdown
+   # Day [N] — [Topic Title]
+
+   ## Today's Focus
+   [2-3 sentences on what this day covers and why it matters for their goal]
+
+   ## Status
+   ⬜ Not Started
+
+   ---
+
+   ## Step 1: NotebookLM Research Prompt
+
+   Copy this prompt into NotebookLM along with the sources listed below:
+
    ```
-   For each day:
-   - Title: "Day N - [Topic]"
-   - Why This Matters (personalized to their goal)
-   - Today's Focus
-   - Status checkbox
-   - Learning materials section
-   - Exercise section
-   - Daily reflection section
-   - Connection to their goal
+   [Generated research prompt with their context]
    ```
+
+   **Sources to upload to NotebookLM:**
+   - [Source 1 with URL]
+   - [Source 2 with URL]
+   - [Source 3 with URL]
+
+   ---
+
+   ## Step 2: NotebookLM Podcast Synthesis Prompt
+
+   After uploading sources, use this prompt to generate your podcast:
+
+   ```
+   [Generated podcast synthesis prompt with their context]
+   ```
+
+   Generate the 20-30 minute Audio Overview in NotebookLM.
+
+   ---
+
+   ## Step 3: Download & Transcribe
+
+   **Download podcast:**
+   - Save the .m4a file to: `[Bootcamp Name]/Day [N]/`
+   - Filename: `Day_[N]_[Topic_Slug].m4a`
+
+   **Transcribe with Whisper (if using):**
+   ```bash
+   whisper "[path]/Day_[N]_[Topic_Slug].m4a" \
+     --model base \
+     --output_format txt \
+     --output_dir "[Bootcamp Name]/Day [N]"
+   ```
+
+   This creates: `Day_[N]_[Topic_Slug].txt`
+
+   ---
+
+   ## Step 4: Study Sheet
+
+   After listening to the podcast, fill this in:
+
+   ### 3 Key Concepts
+   1. **[Concept 1]** — [Definition and why it matters]
+   2. **[Concept 2]** — [Definition and why it matters]
+   3. **[Concept 3]** — [Definition and why it matters]
+
+   ### 3 Resources to Go Deeper
+   1. [Resource 1]
+   2. [Resource 2]
+   3. [Resource 3]
+
+   ### 2 Common Misconceptions
+   1. **[Misconception 1]** — [Why it's wrong]
+   2. **[Misconception 2]** — [Why it's wrong]
+
+   ---
+
+   ## Step 5: Daily Exercise
+
+   [Generated exercise specific to their context]
+
+   **Task:** [Specific task]
+   **Deliverable:** [What they create]
+   **Time:** [Estimated time]
+
+   ---
+
+   ## Step 6: End of Day Debrief
+
+   **3 Things I Learned Today:**
+   1.
+   2.
+   3.
+
+   **What Was Unclear:**
+   [Note confusion to address tomorrow]
+
+   **How This Connects to [Their Goal]:**
+   [Application to their specific situation]
+
+   ---
+
+   ## Transcript Summary (Optional)
+
+   If you transcribed the podcast, add key insights here:
+
+   **Core Argument:**
+   [Main thesis of the episode]
+
+   **Key Insights:**
+   - [Insight 1]
+   - [Insight 2]
+   - [Insight 3]
+
+   **[Their Context]-Specific Takeaways:**
+   - [How this applies to their work/project]
+   - [Action items based on learning]
+   ```
+
+   **This structure enforces the complete workflow:**
+   1. Research prompt → NotebookLM sources
+   2. Podcast prompt → Audio generation
+   3. Download .m4a file
+   4. Transcribe with Whisper (optional)
+   5. Study sheet after listening
+   6. Daily exercise
+   7. End of day debrief
+   8. Optional transcript summary
 
 4. **Create resource library page:**
    ```
